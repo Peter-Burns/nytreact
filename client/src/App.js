@@ -1,15 +1,14 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import "./App.css";
-import searchForm from './pages/searchForm';
+import Search from './pages/Search';
 import savedArticles from './pages/savedArticles';
 import noMatch from './pages/noMatch';
 
 class App extends Component {
   state = {
     savedArticles: [],
-    searchResults: [],
-    matchCount: 0
+    searchResults: []
   };
   render() {
     return (
@@ -21,8 +20,8 @@ class App extends Component {
             <Link to="/saved"><button className = "btn btn-success">Saved</button></Link>
           </div>
           <Switch>
-            <Route exact path="/" component={searchForm} />
-            <Route exact path="/search" component={searchForm} />
+            <Route exact path="/" component={Search} />
+            <Route exact path="/search" component={Search} />
             <Route exact path="/saved" component={savedArticles} />
             <Route path="/*" component={noMatch} />
           </ Switch>
