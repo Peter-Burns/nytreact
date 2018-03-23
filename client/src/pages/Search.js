@@ -70,7 +70,7 @@ class Search extends Component {
             <h4>Articles</h4>
           </ div>
           <div className="panel-body">
-            <div className="list-group">
+            <ul className="list-group">
               {this.state.articles.map(article => (
                 <div key={article.web_url} className="list-group-item">
                   <a href={article.web_url}><h4>{article.headline.main}</h4></a>
@@ -79,7 +79,7 @@ class Search extends Component {
                   <button className="btn btn-success" onClick={() => this.saveArticle(article.headline.main, article.snippet,article.web_url,moment(article.pub_date))}>Save Article</button>
                 </div>
               ))}
-            </div>
+            </ul>
           </div>
         </div>
       </ section>
