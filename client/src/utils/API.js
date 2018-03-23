@@ -4,7 +4,7 @@ export default {
     searchArticles: function (query, start, end) {
         return axios.get("https://api.nytimes.com/svc/search/v2/articlesearch.json", {
             params: {
-                'api-key': process.env.NYT_API_KEY,
+                'api-key': process.env.API_KEY,
                 'q': query,
                 'begin_date': start + '0101',
                 'end_date': end + '1231'
