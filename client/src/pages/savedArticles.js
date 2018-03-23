@@ -19,7 +19,7 @@ class savedArticles extends Component {
           <h2>Saved Articles</h2>
         </div>
         <ul className="list-group">
-          {this.state.articles.map(article => (
+          {this.state.articles.data.map(article => (
             <div key={article.url} className="list-group-item">
               <a href={article.url}><h4>{article.title}</h4></a>
               <p>{article.snippet || "No text preview"}</p>
