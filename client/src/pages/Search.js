@@ -20,7 +20,7 @@ class Search extends Component {
   saveArticle = (title, snippet, url, date) =>{
     API.saveArticle({title:title, snippet:snippet, url:url, dateCreated:date})
     .then(res => alert('Saved!'))
-    .catch(err => console.log(err));
+    .catch(err => alert('Already saved'));
   }
 
   loadArticles = articles => {
@@ -76,7 +76,7 @@ class Search extends Component {
                   <a href={article.web_url}><h4>{article.headline.main}</h4></a>
                   <p>{article.snippet || "No text preview"}</p>
                   {moment(article.pub_date).format('M/D/YYYY h:mmA')}
-                  <button className="btn btn-success" onClick={this.saveArticle(article.headline.main, article.snippet,article.web_url,moment(article.pub_date))}>Save Article</button>
+                  <button className="btn btn-success" onClick={() => this.saveArticle(article.headline.main, article.snippet,article.web_url,moment(article.pub_date))}>Save Article</button>
                 </div>
               ))}
             </div>
